@@ -16,13 +16,14 @@ import XCTest
 */
 
 final class Game {
+    var totalSum = 0
 
     func roll(pins: Int) {
-
+        totalSum += pins
     }
 
     func score() -> Int {
-        return 0
+        return totalSum
     }
 
 }
@@ -37,6 +38,16 @@ class BowlingGameTests: XCTestCase {
         }
 
         XCTAssertEqual(sut.score(), 0)
+    }
+
+    func test_onePin_deliversOnePoint() {
+        let sut = Game()
+
+        for index in 1...20 {
+            sut.roll(pins: index == 1 ? 1 : 0)
+        }
+
+        XCTAssertEqual(sut.score(), 1)
     }
 
 }
