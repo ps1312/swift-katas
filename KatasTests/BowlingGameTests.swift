@@ -15,6 +15,28 @@ import XCTest
 
 */
 
+final class Game {
+
+    func roll(pins: Int) {
+
+    }
+
+    func score() -> Int {
+        return 0
+    }
+
+}
+
 class BowlingGameTests: XCTestCase {
+
+    func test_gutterGame_deliversZeroPoints() {
+        let sut = Game()
+
+        for _ in 1...20 {
+            sut.roll(pins: 0)
+        }
+
+        XCTAssertEqual(sut.score(), 0)
+    }
 
 }
