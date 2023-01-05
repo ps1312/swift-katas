@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A19FAEF2966F6CC00ED3E62 /* Katas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A19FAE62966F6CC00ED3E62 /* Katas.framework */; };
+		3A8B6E2F2966F79C0056CD1A /* FizzBuzzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B6E2E2966F79C0056CD1A /* FizzBuzzTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		3A19FAE62966F6CC00ED3E62 /* Katas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Katas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A19FAEE2966F6CC00ED3E62 /* KatasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KatasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A8B6E2E2966F79C0056CD1A /* FizzBuzzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzzTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		3A19FAF22966F6CC00ED3E62 /* KatasTests */ = {
 			isa = PBXGroup;
 			children = (
+				3A8B6E2E2966F79C0056CD1A /* FizzBuzzTests.swift */,
 			);
 			path = KatasTests;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 					};
 					3A19FAED2966F6CC00ED3E62 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 				};
 			};
@@ -191,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8B6E2F2966F79C0056CD1A /* FizzBuzzTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,14 +388,21 @@
 		3A19FAFC2966F6CC00ED3E62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 99FHZVWMRA;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pssr.KatasTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -398,10 +410,16 @@
 		3A19FAFD2966F6CC00ED3E62 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 99FHZVWMRA;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pssr.KatasTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
