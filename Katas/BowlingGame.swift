@@ -32,10 +32,11 @@ public final class Game {
         var score = 0
 
         for frame in stride(from: 0, to: 20, by: 2) {
+            let lastFrame = frame == 18
             let frameScore = getFrameScore(frame: frame)
             score += frameScore
 
-            if frameScore == 10 { // is spare, sum the next frame first roll for extra points
+            if !lastFrame && frameScore == 10 { // is spare, sum the next frame first roll for extra points
                 let extraScore = attemps[frame + 2]
                 score += extraScore
             }
