@@ -1,24 +1,5 @@
 import XCTest
-
-/*
- Write a program using TDD that prints the numbers from 1 to 100.
-
- For multiples of 3, print "Fizz"
- For multiples of 5, print "Buzz"
- For multiples of both, print "FizzBuzz"
-*/
-
-func fizzBuzz(_ number: Int) -> String {
-    if number.isMultiple(of: 15) {
-        return "FizzBuzz"
-    } else if number.isMultiple(of: 3) {
-        return "Fizz"
-    } else if number.isMultiple(of: 5) {
-        return "Buzz"
-    } else {
-        return "\(number)"
-    }
-}
+import Katas
 
 class FizzBuzzTests: XCTestCase {
     func test_printsNumber() {

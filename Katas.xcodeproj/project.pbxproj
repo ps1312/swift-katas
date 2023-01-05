@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A19FAEF2966F6CC00ED3E62 /* Katas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A19FAE62966F6CC00ED3E62 /* Katas.framework */; };
 		3A8B6E2F2966F79C0056CD1A /* FizzBuzzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B6E2E2966F79C0056CD1A /* FizzBuzzTests.swift */; };
+		3A8B6E31296702C00056CD1A /* FizzBuzz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B6E30296702C00056CD1A /* FizzBuzz.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +26,7 @@
 		3A19FAE62966F6CC00ED3E62 /* Katas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Katas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A19FAEE2966F6CC00ED3E62 /* KatasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KatasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8B6E2E2966F79C0056CD1A /* FizzBuzzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzzTests.swift; sourceTree = "<group>"; };
+		3A8B6E30296702C00056CD1A /* FizzBuzz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		3A19FAE82966F6CC00ED3E62 /* Katas */ = {
 			isa = PBXGroup;
 			children = (
+				3A8B6E30296702C00056CD1A /* FizzBuzz.swift */,
 			);
 			path = Katas;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 				TargetAttributes = {
 					3A19FAE52966F6CC00ED3E62 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 					3A19FAED2966F6CC00ED3E62 = {
 						CreatedOnToolsVersion = 14.1;
@@ -188,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8B6E31296702C00056CD1A /* FizzBuzz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +337,7 @@
 		3A19FAF92966F6CC00ED3E62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -353,6 +359,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -360,6 +367,7 @@
 		3A19FAFA2966F6CC00ED3E62 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -388,6 +396,7 @@
 		3A19FAFC2966F6CC00ED3E62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -410,6 +419,7 @@
 		3A19FAFD2966F6CC00ED3E62 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
