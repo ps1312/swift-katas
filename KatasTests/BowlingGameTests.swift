@@ -90,8 +90,18 @@ class BowlingGameTests: XCTestCase {
         let sut = Game()
 
         rollMany(pins: 5, for: sut)
+        sut.roll(pins: 0) // extra spare roll
 
         XCTAssertEqual(sut.score(), 145)
+    }
+
+    func test_allSparesWith10ExtraPins_delivers155Points() {
+        let sut = Game()
+
+        rollMany(pins: 5, for: sut)
+        sut.roll(pins: 10) // extra spare roll
+
+        XCTAssertEqual(sut.score(), 155)
     }
 
     private func rollMany(pins: Int, for sut: Game, left: Int = 20) {
