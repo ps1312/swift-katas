@@ -61,6 +61,18 @@ class BowlingGameTests: XCTestCase {
         XCTAssertEqual(sut.score(), 14)
     }
 
+    func test_spareAndStrike_delivers30Points() {
+        let sut = Game()
+
+        rollSpare(for: sut)
+
+        sut.roll(pins: 10)
+
+        rollMany(pins: 0, for: sut, left: 16)
+
+        XCTAssertEqual(sut.score(), 30)
+    }
+
     private func rollMany(pins: Int, for sut: Game, left: Int = 20) {
         for _ in 1...left {
             sut.roll(pins: 0)
