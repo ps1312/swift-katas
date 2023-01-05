@@ -8,18 +8,18 @@ import XCTest
  For multiples of both, print "FizzBuzz"
 */
 
-func fizzBuzz(_ number: Int) -> Int {
-    return number
+func fizzBuzz(_ number: Int) -> String {
+    return "\(number)"
 }
 
 class FizzBuzzTests: XCTestCase {
 
     func test_printsOne() {
-        XCTAssertEqual(fizzBuzz(1), 1)
+        XCTAssertEqual(fizzBuzz(1), "1")
     }
 
     func test_printsTwo() {
-        XCTAssertEqual(fizzBuzz(2), 2)
+        XCTAssertEqual(fizzBuzz(2), "2")
     }
 
 }
