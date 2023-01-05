@@ -1,4 +1,5 @@
 import XCTest
+import Foundation
 
 /*
 
@@ -25,20 +26,21 @@ final class Game {
     func score() -> Int {
         var score = 0
 
-        var i = 0
-        while i < 20 {
-            let frameScore = attemps[i] + attemps[i + 1]
+        for frame in stride(from: 0, to: 20, by: 2) {
+            let frameScore = getFrameScore(frame: frame)
             score += frameScore
 
-            if frameScore == 10 { // is spare, sum the next roll for extra points
-                let extraScore = attemps[i + 2]
+            if frameScore == 10 { // is spare, sum the next frame first roll for extra points
+                let extraScore = attemps[frame + 2]
                 score += extraScore
             }
-
-            i += 2
         }
 
         return score
+    }
+
+    private func getFrameScore(frame: Int) -> Int {
+        attemps[frame] + attemps[frame + 1]
     }
 
 }
