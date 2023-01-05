@@ -22,6 +22,10 @@ public final class Game {
 
     public func roll(pins: Int) {
         attemps.append(pins)
+
+        if pins == 10 {
+            attemps.append(0)
+        }
     }
 
     public func score() -> Int {
