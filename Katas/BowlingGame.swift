@@ -31,17 +31,18 @@ public final class Game {
     public func score() -> Int {
         var score = 0
 
-        for frame in stride(from: 0, to: 20, by: 2) {
-            let frameScore = getFrameScore(frame: frame)
-            score += frameScore
+        for rollIndex in stride(from: 0, to: 20, by: 2) {
+            let frameScore = getFrameScore(frame: rollIndex)
 
             var extraScore = 0
-            if attemps[frame] == 10 {
-                extraScore = getFrameScore(frame: frame + 2)
-            } else if frameScore == 10 {
-                extraScore = attemps[frame + 2]
+
+            if isStrike(rollIndex) {
+                extraScore = getFrameScore(frame: rollIndex + 2)
+            } else if isSpare(rollIndex) {
+                extraScore = attemps[rollIndex + 2]
             }
-            score += extraScore
+
+            score += frameScore + extraScore
         }
 
         return score
@@ -49,6 +50,14 @@ public final class Game {
 
     private func getFrameScore(frame: Int) -> Int {
         attemps[frame] + attemps[frame + 1]
+    }
+
+    private func isStrike(_ rollIndex: Int) -> Bool {
+        attemps[rollIndex] == 10
+    }
+
+    private func isSpare(_ rollIndex: Int) -> Bool {
+        getFrameScore(frame: rollIndex) == 10
     }
 
 }
