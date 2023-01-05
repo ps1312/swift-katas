@@ -8,14 +8,14 @@ import XCTest
  For multiples of booth, print "FizzBuzz"
 */
 
-func fizzBuzz() -> Int {
-    return 1
+func fizzBuzz() -> [Int] {
+    return [1, 2]
 }
 
 class FizzBuzzTests: XCTestCase {
 
-    func test_printsOne() {
-        XCTAssertEqual(fizzBuzz(), 1)
+    func test_printsOneAndTwo() {
+        XCTAssertEqual(fizzBuzz(), [1, 2])
     }
 
 }
