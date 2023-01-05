@@ -50,11 +50,12 @@ class FizzBuzzTests: XCTestCase {
         XCTAssertEqual(fizzBuzz(10), "Buzz")
     }
 
-    func test_printsFizzBuzzWhenNumberIsFifteen() {
+    func test_printsFizzBuzzWhenNumberIsMultipleOfFifteen() {
         XCTAssertEqual(fizzBuzz(15), "FizzBuzz")
-    }
-
-    func test_printsFuzzBuzzWhenNumberIs30() {
         XCTAssertEqual(fizzBuzz(30), "FizzBuzz")
+        XCTAssertEqual(fizzBuzz(45), "FizzBuzz")
+        XCTAssertEqual(fizzBuzz(60), "FizzBuzz")
+        XCTAssertEqual(fizzBuzz(75), "FizzBuzz")
+        XCTAssertEqual(fizzBuzz(90), "FizzBuzz")
     }
 }
