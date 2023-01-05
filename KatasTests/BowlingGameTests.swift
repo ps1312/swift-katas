@@ -16,14 +16,29 @@ import XCTest
 */
 
 final class Game {
-    var totalSum = 0
+    var attemps = [Int]()
 
     func roll(pins: Int) {
-        totalSum += pins
+        attemps.append(pins)
     }
 
     func score() -> Int {
-        return totalSum
+        var score = 0
+
+        var i = 0
+        while i < 20 {
+            let frameScore = attemps[i] + attemps[i + 1]
+            score += frameScore
+
+            if frameScore == 10 { // is spare, sum the next roll for extra points
+                let extraScore = attemps[i + 2]
+                score += extraScore
+            }
+
+            i += 2
+        }
+
+        return score
     }
 
 }
@@ -64,6 +79,17 @@ class BowlingGameTests: XCTestCase {
         rollMany(pins: 0, for: sut, left: 18)
 
         XCTAssertEqual(sut.score(), 10)
+    }
+
+    func test_spareWithPinsKnockedDownInNextFrame_delivers12Points() {
+        let sut = Game()
+
+        sut.roll(pins: 5)
+        sut.roll(pins: 5)
+        sut.roll(pins: 1)
+        rollMany(pins: 0, for: sut, left: 17)
+
+        XCTAssertEqual(sut.score(), 12)
     }
 
     private func rollMany(pins: Int, for sut: Game, left: Int = 20) {
