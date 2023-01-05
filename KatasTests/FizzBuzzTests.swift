@@ -30,4 +30,8 @@ class FizzBuzzTests: XCTestCase {
         XCTAssertEqual(fizzBuzz(3), "Fizz")
     }
 
+    func test_printsFour() {
+        XCTAssertEqual(fizzBuzz(4), "4")
+    }
+
 }
