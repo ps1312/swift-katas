@@ -9,7 +9,7 @@ import XCTest
 */
 
 func fizzBuzz(_ number: Int) -> String {
-    if number == 15 {
+    if number.isMultiple(of: 15) {
         return "FizzBuzz"
     } else if number.isMultiple(of: 3) {
         return "Fizz"
@@ -52,5 +52,9 @@ class FizzBuzzTests: XCTestCase {
 
     func test_printsFizzBuzzWhenNumberIsFifteen() {
         XCTAssertEqual(fizzBuzz(15), "FizzBuzz")
+    }
+
+    func test_printsFuzzBuzzWhenNumberIs30() {
+        XCTAssertEqual(fizzBuzz(30), "FizzBuzz")
     }
 }
