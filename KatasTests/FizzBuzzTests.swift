@@ -21,13 +21,12 @@ func fizzBuzz(_ number: Int) -> String {
 }
 
 class FizzBuzzTests: XCTestCase {
-
-    func test_printsOne() {
+    func test_printsNumber() {
         XCTAssertEqual(fizzBuzz(1), "1")
-    }
-
-    func test_printsTwo() {
         XCTAssertEqual(fizzBuzz(2), "2")
+        XCTAssertEqual(fizzBuzz(4), "4")
+        XCTAssertEqual(fizzBuzz(53), "53")
+        XCTAssertEqual(fizzBuzz(97), "97")
     }
 
     func test_printsFizzWhenNumberIsMultipleOfThree() {
@@ -36,10 +35,6 @@ class FizzBuzzTests: XCTestCase {
         XCTAssertEqual(fizzBuzz(9), "Fizz")
         XCTAssertEqual(fizzBuzz(51), "Fizz")
         XCTAssertEqual(fizzBuzz(99), "Fizz")
-    }
-
-    func test_printsFour() {
-        XCTAssertEqual(fizzBuzz(4), "4")
     }
 
     func test_printsBuzzWhenNumberIsMultipleOfFive() {
