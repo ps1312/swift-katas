@@ -5,7 +5,7 @@ import XCTest
 
  For multiples of 3, print "Fizz"
  For multiples of 5, print "Buzz"
- For multiples of booth, print "FizzBuzz"
+ For multiples of both, print "FizzBuzz"
 */
 
 func fizzBuzz() -> [Int] {
