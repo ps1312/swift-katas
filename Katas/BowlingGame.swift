@@ -35,10 +35,13 @@ public final class Game {
             let frameScore = getFrameScore(frame: frame)
             score += frameScore
 
-            if frameScore == 10 { // is spare, sum the next frame first roll for extra points
-                let extraScore = attemps[frame + 2]
-                score += extraScore
+            var extraScore = 0
+            if attemps[frame] == 10 {
+                extraScore = getFrameScore(frame: frame + 2)
+            } else if frameScore == 10 {
+                extraScore = attemps[frame + 2]
             }
+            score += extraScore
         }
 
         return score

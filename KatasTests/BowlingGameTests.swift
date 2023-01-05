@@ -62,12 +62,36 @@ class BowlingGameTests: XCTestCase {
         XCTAssertEqual(sut.score(), 11)
     }
 
-    func test_strikeWithPinsKnockedDownInNextFrame_delivers13Points() {
+    func test_strikeWithPinsKnockedDownOnlyInFirstExtraRoll_delivers13Points() {
         let sut = Game()
 
         sut.roll(pins: 10)
 
-        rollFrame(for: sut, firstRoll: 2, secondRoll: 0)
+        rollFrame(for: sut, firstRoll: 1, secondRoll: 0)
+
+        rollMany(pins: 0, for: sut, left: 16)
+
+        XCTAssertEqual(sut.score(), 12)
+    }
+
+    func test_strikeWithPinsKnockedDownOnlyInTheSecondExtraRoll_delivers13Points() {
+        let sut = Game()
+
+        sut.roll(pins: 10)
+
+        rollFrame(for: sut, firstRoll: 0, secondRoll: 1)
+
+        rollMany(pins: 0, for: sut, left: 16)
+
+        XCTAssertEqual(sut.score(), 12)
+    }
+
+    func test_strikeWithPinsKnockedDownInNextTwoRolls_delivers14Points() {
+        let sut = Game()
+
+        sut.roll(pins: 10)
+
+        rollFrame(for: sut, firstRoll: 1, secondRoll: 1)
 
         rollMany(pins: 0, for: sut, left: 16)
 
