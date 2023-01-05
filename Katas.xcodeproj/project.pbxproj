@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A19FAEF2966F6CC00ED3E62 /* Katas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A19FAE62966F6CC00ED3E62 /* Katas.framework */; };
 		3A50E28D29672CD800C3B8C4 /* BowlingGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50E28C29672CD800C3B8C4 /* BowlingGameTests.swift */; };
+		3A50E28F2967432700C3B8C4 /* BowlingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50E28E2967432700C3B8C4 /* BowlingGame.swift */; };
 		3A8B6E2F2966F79C0056CD1A /* FizzBuzzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B6E2E2966F79C0056CD1A /* FizzBuzzTests.swift */; };
 		3A8B6E31296702C00056CD1A /* FizzBuzz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B6E30296702C00056CD1A /* FizzBuzz.swift */; };
 /* End PBXBuildFile section */
@@ -27,6 +28,7 @@
 		3A19FAE62966F6CC00ED3E62 /* Katas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Katas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A19FAEE2966F6CC00ED3E62 /* KatasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KatasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A50E28C29672CD800C3B8C4 /* BowlingGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameTests.swift; sourceTree = "<group>"; };
+		3A50E28E2967432700C3B8C4 /* BowlingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGame.swift; sourceTree = "<group>"; };
 		3A8B6E2E2966F79C0056CD1A /* FizzBuzzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzzTests.swift; sourceTree = "<group>"; };
 		3A8B6E30296702C00056CD1A /* FizzBuzz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				3A8B6E30296702C00056CD1A /* FizzBuzz.swift */,
+				3A50E28E2967432700C3B8C4 /* BowlingGame.swift */,
 			);
 			path = Katas;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A50E28F2967432700C3B8C4 /* BowlingGame.swift in Sources */,
 				3A8B6E31296702C00056CD1A /* FizzBuzz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
