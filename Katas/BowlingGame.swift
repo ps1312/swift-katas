@@ -32,17 +32,23 @@ public final class Game {
         var score = 0
 
         for rollIndex in stride(from: 0, to: 20, by: 2) {
+            let isLastFrame = rollIndex == 18
             let frameScore = getFrameScore(frame: rollIndex)
 
             var extraScore = 0
 
-            if isStrike(rollIndex) {
-                extraScore = getFrameScore(frame: rollIndex + 2)
+            if isStrike(rollIndex) && !isLastFrame {
+                extraScore = getFrameScore(frame: rollIndex + 2) + getFrameScore(frame: rollIndex + 4)
             } else if isSpare(rollIndex) {
                 extraScore = attemps[rollIndex + 2]
             }
 
             score += frameScore + extraScore
+
+
+            if isLastFrame {
+                print("last framee")
+            }
         }
 
         return score
