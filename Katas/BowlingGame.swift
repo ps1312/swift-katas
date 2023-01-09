@@ -37,18 +37,17 @@ public final class Game {
 
             var extraScore = 0
 
-            if isStrike(rollIndex) && !isLastFrame {
-                extraScore = getFrameScore(frame: rollIndex + 2) + getFrameScore(frame: rollIndex + 4)
+            if isStrike(rollIndex) {
+                if isLastFrame {
+                    extraScore = getFrameScore(frame: rollIndex + 2)
+                } else {
+                    extraScore = getFrameScore(frame: rollIndex + 2) + getFrameScore(frame: rollIndex + 4)
+                }
             } else if isSpare(rollIndex) {
                 extraScore = attemps[rollIndex + 2]
             }
 
             score += frameScore + extraScore
-
-
-            if isLastFrame {
-                print("last framee")
-            }
         }
 
         return score
