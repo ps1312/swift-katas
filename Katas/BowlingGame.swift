@@ -16,13 +16,13 @@ import Foundation
 */
 
 public final class Game {
-    var attemps = [Int]()
+    var rolls = [Int]()
     var currentRoll = 0
 
     public init() {}
 
     public func roll(pins: Int) {
-        attemps.append(pins)
+        rolls.append(pins)
     }
 
     public func score() -> Int {
@@ -30,13 +30,13 @@ public final class Game {
 
         for _ in 0...9 {
             if isStrike() {
-                scoreSum += 10 + attemps[currentRoll + 1] + attemps[currentRoll + 2]
+                scoreSum += 10 + getFrameScore(currentRoll + 1)
                 currentRoll += 1
             } else {
                 if isSpare() {
-                    scoreSum += 10 + attemps[currentRoll + 2]
+                    scoreSum += 10 + rolls[currentRoll + 2]
                 } else {
-                    scoreSum += attemps[currentRoll] + attemps[currentRoll + 1]
+                    scoreSum += getFrameScore(currentRoll)
                 }
                 currentRoll += 2
             }
@@ -45,11 +45,15 @@ public final class Game {
         return scoreSum
     }
 
+    private func getFrameScore(_ rollIndex: Int) -> Int {
+        rolls[rollIndex] + rolls[rollIndex + 1]
+    }
+
     private func isStrike() -> Bool {
-        attemps[currentRoll] == 10
+        rolls[currentRoll] == 10
     }
 
     private func isSpare() -> Bool {
-        (attemps[currentRoll] + attemps[currentRoll + 1]) == 10
+        (rolls[currentRoll] + rolls[currentRoll + 1]) == 10
     }
 }
