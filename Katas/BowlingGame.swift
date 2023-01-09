@@ -17,52 +17,33 @@ import Foundation
 
 public final class Game {
     var attemps = [Int]()
+    var currentRoll = 0
 
     public init() {}
 
     public func roll(pins: Int) {
         attemps.append(pins)
-
-        if pins == 10 {
-            attemps.append(0)
-        }
     }
 
     public func score() -> Int {
+        var frameIndex = 0
         var score = 0
 
-        for rollIndex in stride(from: 0, to: 20, by: 2) {
-            let isLastFrame = rollIndex == 18
-            let frameScore = getFrameScore(frame: rollIndex)
-
-            var extraScore = 0
-
-            if isStrike(rollIndex) {
-                if isLastFrame {
-                    extraScore = getFrameScore(frame: rollIndex + 2)
+        while frameIndex < 10 {
+            if attemps[currentRoll] == 10 {
+                score += 10 + attemps[currentRoll + 1] + attemps[currentRoll + 2]
+                currentRoll += 1
+            } else {
+                if (attemps[currentRoll] + attemps[currentRoll + 1]) == 10 {
+                    score += 10 + attemps[currentRoll + 2]
                 } else {
-                    extraScore = getFrameScore(frame: rollIndex + 2) + getFrameScore(frame: rollIndex + 4)
+                    score += attemps[currentRoll] + attemps[currentRoll + 1]
                 }
-            } else if isSpare(rollIndex) {
-                extraScore = attemps[rollIndex + 2]
+                currentRoll += 2
             }
-
-            score += frameScore + extraScore
+            frameIndex += 1
         }
 
         return score
     }
-
-    private func getFrameScore(frame: Int) -> Int {
-        attemps[frame] + attemps[frame + 1]
-    }
-
-    private func isStrike(_ rollIndex: Int) -> Bool {
-        attemps[rollIndex] == 10
-    }
-
-    private func isSpare(_ rollIndex: Int) -> Bool {
-        getFrameScore(frame: rollIndex) == 10
-    }
-
 }
