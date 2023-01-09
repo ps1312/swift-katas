@@ -26,24 +26,30 @@ public final class Game {
     }
 
     public func score() -> Int {
-        var frameIndex = 0
-        var score = 0
+        var scoreSum = 0
 
-        while frameIndex < 10 {
-            if attemps[currentRoll] == 10 {
-                score += 10 + attemps[currentRoll + 1] + attemps[currentRoll + 2]
+        for _ in 0...9 {
+            if isStrike() {
+                scoreSum += 10 + attemps[currentRoll + 1] + attemps[currentRoll + 2]
                 currentRoll += 1
             } else {
-                if (attemps[currentRoll] + attemps[currentRoll + 1]) == 10 {
-                    score += 10 + attemps[currentRoll + 2]
+                if isSpare() {
+                    scoreSum += 10 + attemps[currentRoll + 2]
                 } else {
-                    score += attemps[currentRoll] + attemps[currentRoll + 1]
+                    scoreSum += attemps[currentRoll] + attemps[currentRoll + 1]
                 }
                 currentRoll += 2
             }
-            frameIndex += 1
         }
 
-        return score
+        return scoreSum
+    }
+
+    private func isStrike() -> Bool {
+        attemps[currentRoll] == 10
+    }
+
+    private func isSpare() -> Bool {
+        (attemps[currentRoll] + attemps[currentRoll + 1]) == 10
     }
 }
