@@ -107,13 +107,13 @@ class BowlingGameTests: XCTestCase {
         XCTAssertEqual(sut.score(), 145)
     }
 
-    func test_allSparesWith10ExtraPins_delivers155Points() {
+    func test_allSparesWithExtraPins_deliversPoints() {
         let sut = Game()
 
         rollMany(pins: 5, for: sut)
-        sut.roll(pins: 10) // extra spare roll
+        sut.roll(pins: 5) // extra spare roll
 
-        XCTAssertEqual(sut.score(), 155)
+        XCTAssertEqual(sut.score(), 150)
     }
 
     private func rollMany(pins: Int, for sut: Game, remaining: Int = 20) {
